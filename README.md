@@ -49,10 +49,6 @@ Toda la información es proporcionada por la API de TMDb, una de las bases de da
 - **API de TMDb**: Para obtener los datos de películas y series.
 - **Tailwind**: Para el estilo y diseño visual de la página.
 
-## Contribuciones
-
-¡Nos encantaría tu ayuda! Si deseas contribuir a este proyecto, siéntete libre de abrir un issue o enviar un pull request.
-
 ---
 
 ¡Gracias por visitar **FullMovies** y feliz exploración!
