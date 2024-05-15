@@ -1,36 +1,58 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Explorador de Películas y Series
 
-First, run the development server:
+¡Bienvenido a **FullMovies**! Esta página web te permite buscar, descubrir y explorar una vasta colección de películas y series utilizando la API de The Movie Database (TMDb).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔍 Buscador
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Utiliza nuestro buscador para encontrar tus películas y series favoritas. Simplemente ingresa el título y obtén resultados instantáneos.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 🎬 Descripción Detallada
 
-## Learn More
+Cada película y serie cuenta con una descripción detallada, incluyendo información sobre el reparto, la sinopsis y otros detalles relevantes.
 
-To learn more about Next.js, take a look at the following resources:
+### 📺 Plataformas Disponibles
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Descubre en qué plataformas está disponible cada película o serie, facilitando así encontrar dónde ver tus contenidos favoritos.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 📚 Lista de Géneros
 
-## Deploy on Vercel
+Explora una lista completa de géneros de películas para encontrar exactamente lo que estás buscando.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📊 Clasificaciones
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Navega por películas y series clasificadas en varias categorías, incluyendo:
+
+- **Populares**: Las películas y series más vistas.
+- **Mejores Puntuadas**: Las películas y series con mejores calificaciones.
+- **En Emisión**: Series que actualmente están siendo emitidas.
+
+## API de TMDb
+
+Toda la información es proporcionada por la API de TMDb, una de las bases de datos de películas y series más completas y actualizadas del mundo.
+
+## Cómo Usar
+
+1. **Buscar**: Utiliza el buscador en la parte superior de la página para encontrar películas y series.
+2. **Explorar**: Revisa las descripciones detalladas y la disponibilidad en plataformas.
+3. **Navegar por Categorías**: Explora las clasificaciones populares, mejores puntuadas y en emisión para descubrir nuevos contenidos.
+
+¡Esperamos que disfrutes explorando el maravilloso mundo del cine y las series con nosotros!
+
+## Tecnologías Utilizadas
+
+- **React**: Para la construcción de la interfaz de usuario.
+- **Next.js**: Para el renderizado del lado del servidor y la generación de rutas API.
+- **API de TMDb**: Para obtener los datos de películas y series.
+- **Tailwind**: Para el estilo y diseño visual de la página.
+
+## Contribuciones
+
+¡Nos encantaría tu ayuda! Si deseas contribuir a este proyecto, siéntete libre de abrir un issue o enviar un pull request.
+
+---
+
+¡Gracias por visitar **FullMovies** y feliz exploración!

@@ -2,32 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-gray-200
+}
+html{
+  @apply scroll-smooth
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.header-link {
+  @apply text-slate-100 font-semibold hover:bg-gray-100/20 py-3 px-3 rounded-sm relative
+}
+
+.list-menu-hidden li a {
+  @apply text-center text-slate-100 font-semibold hover:bg-gray-100/20 py-1 px-3 rounded-sm
+}
+
+.dropdown-menu{
+  @apply absolute bg-gray-200 py-4 flex flex-col gap-4 justify-center w-52 rounded-lg z-50 flex-wrap
+}
+.dropdown-menu a{
+@apply font-semibold p-2 hover:bg-white text-sm px-6
+}
+
+select {
+  @apply sm:block mb-2 w-full rounded-md;
+  @apply border p-2 bg-gray-100 outline-none focus:border-blue-100
+}
+
+
+/*Estilos para el scroll del carretel*/
+.custom-scrollbar::-webkit-scrollbar {
+  height: 12px;
+  /* Altura de la barra de desplazamiento horizontal */
+  background: #f0f0f0;
+  /* Fondo del carril */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Color del pulgar */
+  border-radius: 6px;
+  /* Bordes redondeados para el pulgar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  /* Fondo del carril */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555
 }
