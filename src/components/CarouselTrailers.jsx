@@ -33,7 +33,7 @@ const CarouselTrailers = ({ items }) => {
           </div>
           <div className="flex flex-col w-[90%] h-[50%] md:h-[80%] rounded-lg object-cover  items-center">
             <iframe
-              src={`https://www.youtube.com/embed/${movieTrailer.trailers[0].key}?si=70Gy-LFVUX5afDuX`}
+              src={`https://www.youtube.com/embed/${movieTrailer?.trailers[0].key}?si=70Gy-LFVUX5afDuX`}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

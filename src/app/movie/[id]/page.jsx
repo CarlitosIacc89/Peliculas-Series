@@ -94,7 +94,7 @@ const PageMovieId = async ({ params }) => {
           <div className="min-w-[30%]">
             <div>
               <Image
-                src={`${imagenBaseUrl}${data.poster_path}`}
+                src={`${imagenBaseUrl}${data?.poster_path}`}
                 width={300}
                 height={450}
                 alt="poster"

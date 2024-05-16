@@ -40,23 +40,23 @@ async function getData(id) {
     const movieWatchData = await movieWatchRes.json(); //EN DONDE MIRAR LA PELICULA
     const certificationData = await certificationRes.json(); //CERTIFICACION DE LA SERIE
 
-    const ar = Object.entries(movieWatchData.results).filter(
+    const ar = Object.entries(movieWatchData?.results).filter(
       ([key, value]) => key === "AR"
     ); //FILTRO PARA ARGENTINA
 
     const watch = ar.length > 0 ? ar[0][1] : null;
 
     const movieComplete = { ...movieData, ...movieCreditsData, watch };
-    const trailers = movieComplete.videos.results.filter(
+    const trailers = movieComplete?.videos?.results?.filter(
       (video) => video.type === "Trailer"
     );
 
     //Filtro por las certificaciones de Argentina
-    const certificationAr = certificationData.results.filter(
+    const certificationAr = certificationData?.results?.filter(
       (cerMovie) => cerMovie.iso_3166_1 === "AR"
     );
     //Filtro por las certificaciones de Usa
-    const certificationUs = certificationData.results.filter(
+    const certificationUs = certificationData?.results?.filter(
       (cerMovie) => cerMovie.iso_3166_1 === "US"
     );
 
@@ -96,7 +96,7 @@ const PageSerieId = async ({ params }) => {
           <div className="min-w-[30%]">
             <div>
               <Image
-                src={`${imagenBaseUrl}${data.poster_path}`}
+                src={`${imagenBaseUrl}${data?.poster_path}`}
                 width={300}
                 height={450}
                 alt="poster"

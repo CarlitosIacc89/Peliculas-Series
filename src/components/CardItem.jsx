@@ -30,7 +30,7 @@ const CardItem = ({ item }) => {
             height={350}
             alt="imagen"
             className="w-full h-full rounded-lg transition-transform group-hover:transform group-hover:-translate-y-4 object-cover"
-            onLoadingComplete={() => setLoading(false)}
+            onLoad={() => setLoading(false)}
           />
 
           <div

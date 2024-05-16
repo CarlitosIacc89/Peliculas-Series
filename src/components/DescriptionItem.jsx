@@ -23,19 +23,19 @@ const DescriptionItem = ({ item }) => {
       setSerie(false);
       certificationMovie(item.certification).then((res) => setCer(res));
     }
-  }, [url, serie]);
+  }, [url, serie, item]);
 
-  const genres = item.genres.map((genre) => genre.name);
+  const genres = item?.genres.map((genre) => genre.name);
   const genreStrings = genres.join(", ");
   return (
     <div className=" flex flex-col gap-2 md:gap-4 text-white text-sm md:text-xl font-bold">
       <div>
         <h2 className="text-2xl md:text-4xl">
-          {serie ? item.name : item.title}
+          {serie ? item?.name : item?.title}
           {!url.includes("series") && (
             <span className="font-normal">
               {" "}
-              ({item.release_date.slice(0, 4)})
+              ({item?.release_date.slice(0, 4)})
             </span>
           )}
         </h2>
@@ -47,8 +47,8 @@ const DescriptionItem = ({ item }) => {
 
         <span>
           {url.includes("series")
-            ? item.first_air_date.slice(0, 4)
-            : item.release_date.slice(0, 4)}
+            ? item?.first_air_date.slice(0, 4)
+            : item?.release_date.slice(0, 4)}
         </span>
 
         <span>| {genreStrings}</span>
@@ -56,7 +56,7 @@ const DescriptionItem = ({ item }) => {
       <div>
         <div className="relative mt-3 md:mt-6 flex items-center">
           <CircularProgress
-            percentage={item.vote_average}
+            percentage={item?.vote_average}
             className=" flex items-center justify-center"
           />
           <div className="px-3">Puntuacion de los usuarios</div>
@@ -72,8 +72,8 @@ const DescriptionItem = ({ item }) => {
       <div className="">
         <p className="text-xl md:text-2xl py-2">Resumen</p>
         <p className="font-semibold">
-          {item.overview.length > 0 ? (
-            item.overview
+          {item?.overview.length > 0 ? (
+            item?.overview
           ) : (
             <span className="text-sm">Resumen no disponible</span>
           )}
@@ -81,12 +81,12 @@ const DescriptionItem = ({ item }) => {
       </div>
       <h2>Disponible en: </h2>
       <div className="flex gap-4">
-        {item.watch && item.watch.flatrate ? (
-          item.watch.flatrate.map((companie) => (
+        {item?.watch && item?.watch?.flatrate ? (
+          item?.watch?.flatrate.map((companie) => (
             <div key={companie.provider_id}>
               <div className=" inline-flex items-center max-w-14 h-auto  justify-center  rounded-xl">
                 <Image
-                  src={`${imagenBaseUrl}${companie.logo_path}`}
+                  src={`${imagenBaseUrl}${companie?.logo_path}`}
                   width={100}
                   height={100}
                   alt="logo"

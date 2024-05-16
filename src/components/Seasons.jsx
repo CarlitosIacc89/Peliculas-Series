@@ -49,7 +49,7 @@ const Seasons = ({ item }) => {
 
         {item &&
           item.seasons.map((serie) => (
-            <>
+            <div key={serie.id}>
               <div className="flex flex-col md:flex-row border w-[98%] mx-auto shadow-xl rounded-2xl mb-6 gap-4">
                 <div className="w-40 mx-auto p-2 md:p-0">
                   <Image
@@ -84,7 +84,7 @@ const Seasons = ({ item }) => {
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           ))}
       </details>
     </div>

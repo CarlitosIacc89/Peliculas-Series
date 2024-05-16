@@ -110,20 +110,20 @@ export default async function Home() {
       <HeroSection />
       <div className="flex flex-col xl:flex-row mt-10 gap-16 max-w-[95%] mx-auto">
         <div className="h-full space-y-8">
-          <SectionAside items={nowPlayingMoviesData.results.slice(0, 15)} />
-          <SectionAside items={airingTodaySeriesData.results.slice(0, 15)} />
+          <SectionAside items={nowPlayingMoviesData?.results?.slice(0, 15)} />
+          <SectionAside items={airingTodaySeriesData?.results?.slice(0, 15)} />
         </div>
         <div className="grid grid-rows-3 gap-8">
           <CarouselItems
-            items={popularMoviesData.results}
+            items={popularMoviesData?.results}
             text={"Peliculas populares"}
           />
           <CarouselItems
-            items={topRatedMoviesData.results}
+            items={topRatedMoviesData?.results}
             text={"Peliculas top"}
           />
           <CarouselItems
-            items={popularSeriesData.results}
+            items={popularSeriesData?.results}
             text={"Series populares"}
           />
         </div>
@@ -132,6 +132,3 @@ export default async function Home() {
     </section>
   );
 }
-//f662fb1cfcfa243c47505204f2a97e5e; apikey peliculas
-
-//eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNjYyZmIxY2ZjZmEyNDNjNDc1MDUyMDRmMmE5N2U1ZSIsInN1YiI6IjYzOGUzNjI1ZTk0MmVlMDBjOTA4OGIxZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9QhgmFk9cmXCjOgDwOWt-Ri_vy_DDhuYSGvZgjDKrZk; tokenPeliculas
