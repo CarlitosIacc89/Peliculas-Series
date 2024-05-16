@@ -36,7 +36,7 @@ const MovieCast = ({ data }) => {
                 <p className="font-extrabold text-wrap line-clamp-1">
                   {actor.original_name}
                 </p>
-                <p className="font-semibold text-sm text-slate-600">
+                <p className="font-semibold text-sm text-slate-600 line-clamp-1 text-wrap">
                   {actor.character}
                 </p>
               </div>

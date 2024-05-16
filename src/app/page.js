@@ -41,29 +41,31 @@ async function getData() {
     const airingTodaySeriesData = await airingTodaySeriesRes.json();
 
     const idMoviesUpcoming = [];
-    upcomingMoviesData.results.slice(0, 10).forEach((mov) => {
-      idMoviesUpcoming.push(mov.id);
-    });
+    if (upcomingMoviesData) {
+      upcomingMoviesData?.results?.slice(0, 10).forEach((mov) => {
+        idMoviesUpcoming.push(mov.id);
+      });
+    }
 
     //Trailers de peliculas
     const fetchMoviesData = async () => {
       try {
-        const promises = idMoviesUpcoming.map(async (id) => {
+        const promises = idMoviesUpcoming?.map(async (id) => {
           const response = await fetch(
             `https://api.themoviedb.org/3/movie/${id}?api_key=f662fb1cfcfa243c47505204f2a97e5e&append_to_response=videos`,
             options
           );
           const data = await response.json();
-          const trailers = data.videos.results.filter(
+          const trailers = data?.videos?.results?.filter(
             (video) => video.type === "Trailer"
           );
-          const image = data.backdrop_path;
+          const image = data?.backdrop_path;
 
           return {
-            title: data.original_title,
+            title: data?.original_title,
             trailers,
             image,
-            id: data.id,
+            id: data?.id,
           };
         });
 
@@ -115,11 +117,17 @@ export default async function Home() {
         </div>
         <div className="grid grid-rows-3 gap-8">
           <CarouselItems
-            items={popularMoviesData?.results}
+            items={
+              popularMoviesData?.results.length > 0 &&
+              popularMoviesData?.results
+            }
             text={"Peliculas populares"}
           />
           <CarouselItems
-            items={topRatedMoviesData?.results}
+            items={
+              topRatedMoviesData?.results.length > 0 &&
+              topRatedMoviesData?.results
+            }
             text={"Peliculas top"}
           />
           <CarouselItems
@@ -128,7 +136,9 @@ export default async function Home() {
           />
         </div>
       </div>
-      <CarouselTrailers items={trailersUpcoming} />
+      <CarouselTrailers
+        items={trailersUpcoming?.length > 0 && trailersUpcoming}
+      />
     </section>
   );
 }

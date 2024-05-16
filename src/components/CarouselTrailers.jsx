@@ -2,16 +2,17 @@
 
 import { imagenBaseUrl } from "@/helpers/options";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Play from "./icons/Play";
 import Close from "./icons/Close";
 
 const CarouselTrailers = ({ items }) => {
-  const [backGround, setBackGround] = useState(
-    `${imagenBaseUrl}${items[0].image}`
-  );
   const [trailer, setTrailer] = useState(false);
   const [movieTrailer, setMovieTrailer] = useState(null);
+
+  const [backGround, setBackGround] = useState(
+    `${imagenBaseUrl}${items && items[0].image}`
+  );
 
   return (
     <div
@@ -33,7 +34,9 @@ const CarouselTrailers = ({ items }) => {
           </div>
           <div className="flex flex-col w-[90%] h-[50%] md:h-[80%] rounded-lg object-cover  items-center">
             <iframe
-              src={`https://www.youtube.com/embed/${movieTrailer?.trailers[0].key}?si=70Gy-LFVUX5afDuX`}
+              src={`https://www.youtube.com/embed/${
+                movieTrailer && movieTrailer?.trailers[0].key
+              }?si=70Gy-LFVUX5afDuX`}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -52,35 +55,36 @@ const CarouselTrailers = ({ items }) => {
         </span>
       </div>
       <div className="whitespace-nowrap w-ful">
-        {items.map((item) => (
-          <div
-            key={item.id}
-            className="relative inline-block w-64 md:w-96 max-w-96 mx-5"
-            onMouseOver={() => setBackGround(`${imagenBaseUrl}${item.image}`)}
-          >
-            <div className="relative transform hover:scale-105 transition duration-200 cursor-pointer">
-              <Image
-                width={300}
-                height={168}
-                src={`${imagenBaseUrl}${item.image}`}
-                alt="imagen"
-                className="w-full rounded-xl "
-              />
-              <div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                onClick={() => {
-                  setMovieTrailer(item);
-                  setTrailer(true);
-                }}
-              >
-                <Play className="w-20 h-20" />
+        {items &&
+          items.map((item) => (
+            <div
+              key={item.id}
+              className="relative inline-block w-64 md:w-96 max-w-96 mx-5"
+              onMouseOver={() => setBackGround(`${imagenBaseUrl}${item.image}`)}
+            >
+              <div className="relative transform hover:scale-105 transition duration-200 cursor-pointer">
+                <Image
+                  width={300}
+                  height={168}
+                  src={`${imagenBaseUrl}${item.image}`}
+                  alt="imagen"
+                  className="w-full rounded-xl "
+                />
+                <div
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  onClick={() => {
+                    setMovieTrailer(item);
+                    setTrailer(true);
+                  }}
+                >
+                  <Play className="w-20 h-20" />
+                </div>
+              </div>
+              <div className="text-center text-wrap mt-2 font-bold md:text-xl line-clamp-1 mx-auto text-white">
+                {item.title}
               </div>
             </div>
-            <div className="text-center text-wrap mt-2 font-bold md:text-xl line-clamp-1 mx-auto text-white">
-              {item.title}
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
