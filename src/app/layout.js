@@ -25,6 +25,12 @@ export const metadata = {
     site_name: "FullMovies",
     type: "website",
   },
+  additionalMetaTags: [
+    {
+      property: "fb:app_id",
+      content: "928977633900253",
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
