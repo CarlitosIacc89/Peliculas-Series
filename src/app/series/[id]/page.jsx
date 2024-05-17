@@ -79,7 +79,6 @@ async function getData(id) {
 
 const PageSerieId = async ({ params }) => {
   const data = await getData(params.id);
-  console.log(data);
 
   const backGround = imagenBaseUrl + data.backdrop_path;
 

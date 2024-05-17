@@ -12,12 +12,13 @@ export const metadata = {
   author: "Carlos Soria",
   keywords: "pelicula, serie, terror, accion",
   openGraph: {
-    title: "Explorador de peliculas y series",
+    title: "FullMovies",
     description:
-      "Encuentra toda la informacion  de la pelicula o serie que buscas",
+      "Explorador de peliculas y series. Encuentra toda la informacion  de la pelicula o serie que buscas",
+    url: "https://page-movies-soria-iacc-hotmailcom-carlos-projects-5e31a4ed.vercel.app/",
     images: [
       {
-        url: "http://localhost:3000/captura-pantalla.png",
+        url: "https://res.cloudinary.com/dtlchh1km/image/upload/v1715890116/captura-pantalla_gaqufb.png",
         width: 600,
         height: 400,
       },
@@ -39,7 +40,7 @@ export default function RootLayout({ children }) {
       <head>
         <link
           rel="shortcut icon"
-          href="http://localhost:3000/image-logo.jpg"
+          href="https://res.cloudinary.com/dtlchh1km/image/upload/v1715891210/png-transparent-logo-brand-com-student-creative-slate-text-logo-film_jneyny.png"
           type="image/x-icon"
           className="rounded-full"
         />

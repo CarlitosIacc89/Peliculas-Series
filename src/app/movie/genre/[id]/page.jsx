@@ -45,7 +45,7 @@ const PageGenreId = ({ params }) => {
     >
       {loading && (
         <div className="inset-0 fixed bg-black/80 flex items-center justify-center z-10">
-          <Spinner />
+          <Spinner color="text-white" />
         </div>
       )}
       <AlertGenres />

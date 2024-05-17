@@ -13,7 +13,11 @@ const DataSeries = ({ item }) => {
       <div className="flex flex-col md:flex-row border w-[98%] mx-auto shadow-xl rounded-2xl mb-6 gap-4">
         <div className="w-40 mx-auto p-2 md:p-0">
           <Image
-            src={`${imagenBaseUrl}${item.last_episode_to_air.still_path}`}
+            src={
+              item.last_episode_to_air.still_path
+                ? `${imagenBaseUrl}${item.last_episode_to_air.still_path}`
+                : "/sin-imagen.jpg"
+            }
             width={550}
             height={550}
             alt="imagen"
@@ -36,7 +40,9 @@ const DataSeries = ({ item }) => {
             <p className="text-center">
               Fecha de inicio:{" "}
               <span className="text-slate-600">
-                {date(item.seasons[item.seasons.length - 1].air_date)}
+                {item.seasons[item.seasons.length - 1].air_date
+                  ? date(item.seasons[item.seasons.length - 1].air_date)
+                  : "Sin datos"}
               </span>
             </p>
             <p className="text-center">

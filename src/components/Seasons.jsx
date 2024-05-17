@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Star from "./icons/Star";
 import date from "@/helpers/date";
 import { imagenBaseUrl } from "@/helpers/options";
+import Spinner from "./icons/Spinner";
 
 const Seasons = ({ item }) => {
+  const [loading, setLoading] = useState(true);
   return (
     <div className="space-y-4">
       <details className="group rounded-lg bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
@@ -52,12 +54,22 @@ const Seasons = ({ item }) => {
             <div key={serie.id}>
               <div className="flex flex-col md:flex-row border w-[98%] mx-auto shadow-xl rounded-2xl mb-6 gap-4">
                 <div className="w-40 mx-auto p-2 md:p-0">
+                  {loading && (
+                    <p className="absolute inset-0 flex items-center justify-center">
+                      <Spinner color="text-black" />
+                    </p>
+                  )}
                   <Image
-                    src={`${imagenBaseUrl}${serie.poster_path}`}
+                    src={
+                      serie.poster_path
+                        ? `${imagenBaseUrl}${serie.poster_path}`
+                        : "/sin-imagen.jpg"
+                    }
                     width={550}
                     height={550}
                     alt="imagen"
                     className="w-full size-32 object-cover mx-auto rounded-lg md:rounded-none"
+                    onLoad={() => setLoading(false)}
                   />
                 </div>
                 <div className="grow flex flex-col gap-2 justify-center items-center  md:items-start">

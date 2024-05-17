@@ -15,7 +15,7 @@ const HeaderMenuHidden = ({ menuActive, setMenuActive }) => {
       route.push(`/movie/genre/${genreId.id}?name=${genreId.name}`);
       setMenuActive(!menuActive);
     }
-  }, [genreId, route, setMenuActive, menuActive]);
+  }, [genreId, route]);
   return (
     <nav className="z-50">
       <ul

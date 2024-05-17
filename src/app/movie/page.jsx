@@ -48,7 +48,7 @@ const PageMovies = ({ api = "popular" }) => {
     >
       {loader && (
         <div className="inset-0 fixed bg-black/80 flex items-center justify-center z-10">
-          <Spinner />
+          <Spinner color="text-white" />
         </div>
       )}
       <h1 className="text-3xl font-medium p-2 ml-2 mb-3 text-center md:text-start">
